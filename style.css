@@ -1,0 +1,78 @@
+/* global typeography */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.15em;
+}
+
+/* flexbox layout */
+html,
+body {
+    margin: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* header */
+header {
+    background-color: gray;
+    color: white;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+h1 {
+    font-weight: 300;
+}
+
+/* form/employee table format */
+main {
+    flex: auto;
+    max-width: 80%;
+    margin: auto;
+}
+
+form {
+    height: 2em;
+}
+
+#submit-button-div {
+    text-align: right;
+}
+
+#total-monthly-display {
+    text-align: right;
+}
+
+/* table */
+table {
+    width: 100%;
+    text-align: left;
+}
+
+.annual-salary-cell {
+    text-align: right;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 1em;
+}
+
+thead {
+    background-color: rgb(159, 158, 158);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(220, 220, 220);
+}
