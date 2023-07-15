@@ -10,6 +10,8 @@ function onReady() {
     // handlers go here
     $('.submit-button').on('click', handleSubmit); // using handleSubmit function for whenever submit-button is clicked
 
+    $('#table-employees').on("click", '#delete-button', handleDelete)
+
 }
 
 function handleSubmit(event) {
@@ -30,8 +32,15 @@ function handleSubmit(event) {
         <td>${idNumber}</td>
         <td>${jobTitle}</td>
         <td class="annual-salary-cell">$${annualSalary}</td >
-        <td><button>Delete</button></td>
-</tr >
-        `) // this adds a table row of table data, using the values of newly declared variables (which themselves get the values we wrote in the inputs using a getter .val())
+        <td><button id="delete-button">Delete</button></td>
+    </tr >
+        `)
+    // ^ this adds a table row of table data, using the values of newly declared variables (which themselves get the values we wrote in the inputs using a getter .val())
+    // I also found out you can just add $ in front of the ${annualSalary} which might make it easier to use the calc?
+    // made sure to add class and id for salary/delete button to use with handlers and calculations
 }
 
+function handleDelete() {
+    $(this).parent().parent().remove();
+    // this refers to what we're clicking on, first parent is <td>, second parent is <tr>, and we're removing this <tr>
+}
