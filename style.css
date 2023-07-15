@@ -69,10 +69,15 @@ td {
     padding: 1em;
 }
 
+tfoot {
+    height: 2em;
+}
+
 thead {
     background-color: rgb(159, 158, 158);
 }
 
-tbody tr:nth-child(even) {
+tbody tr:nth-child(even),
+tfoot {
     background-color: rgb(220, 220, 220);
 }

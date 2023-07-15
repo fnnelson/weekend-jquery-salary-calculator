@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="./jQuery.js"></script>
+    <script src="./script.js"></script>
     <title>Weekend jQuery Salary Calculator</title>
 </head>
 
@@ -19,10 +21,10 @@
             <form>
                 <div>
                     <input type="text" id="first-name" placeholder="First Name">
-                    <input type="text" name="last-name" placeholder="Last Name">
-                    <input type="text" id="id-number" placeholder="ID">
+                    <input type="text" id="last-name" placeholder="Last Name">
+                    <input type="number" id="id-number" placeholder="ID">
                     <input type="text" id="job-title" placeholder="Title">
-                    <input type="text" id="annual-salary" placeholder="Annual Salary">
+                    <input type="number" id="annual-salary" placeholder="Annual Salary">
                 </div>
                 <div id="submit-button-div">
                     <button class="submit-button">Submit</button>
@@ -69,6 +71,11 @@
                         <td><button>Delete</button></td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <td colspan="6">
+                        <p></p>
+                    </td>
+                </tfoot>
             </table>
         </section>
         <div>
