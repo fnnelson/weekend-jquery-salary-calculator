@@ -38,6 +38,12 @@ function handleSubmit(event) {
     // ^ this adds a table row of table data, using the values of newly declared variables (which themselves get the values we wrote in the inputs using a getter .val())
     // I also found out you can just add $ in front of the ${annualSalary} which might make it easier to use the calc?
     // made sure to add class and id for salary/delete button to use with handlers and calculations
+
+    $("#first-name").val("");
+    $('#last-name').val("");
+    $('#id-number').val("");
+    $('#job-title').val("");
+    $('#annual-salary').val("");
 }
 
 function handleDelete() {
