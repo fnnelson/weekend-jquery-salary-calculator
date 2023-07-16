@@ -81,3 +81,7 @@ tbody tr:nth-child(even),
 tfoot {
     background-color: rgb(220, 220, 220);
 }
+
+.red-background {
+    background-color: red;
+}
