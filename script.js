@@ -66,10 +66,20 @@ function handleDelete() {
     // define variable as value of same row's annual salary cell
     // how to do this?  tried using $(this).val() but that'd only get the button value.  $(this).parent.(#annual-salary-cell)
 
-    // const specificEmployeeSalary = $(this).parent().siblings('#annual-salary-cell').val()
+    const specificEmployeeSalary = $(this).parent().siblings('#annual-salary-cell').text()
     // console.log(specificEmployeeSalary);
-    // // monthlySalaryTotal -= specificEmployeeSalary / 12;
-    // // $('#total-monthly-display').text(monthlySalaryTotal)
+    const employeeSalaryAsNumber = 1 * specificEmployeeSalary.slice(1).replace(',', '');
+    // console.log(employeeSalaryAsNumber)
+    monthlySalaryTotal -= employeeSalaryAsNumber / 12;
+    // console.log(monthlySalaryTotal);
+    $('#total-monthly-display').text(`Total Monthly: ${monthlySalaryTotal.toLocaleString("en-US", { style: "currency", currency: "USD" })}`)
+
+    // Pretty crazy to figure this one out - took at least 2 hours!  And it's a very round-about way to do it.  
+    // 1. Essentially I'm declaring a new variable specificEmployeeSalary to use some traversal to go up one parent, move over to a sibling with #annual-salary-cell as its ID, then grab the text from it.  This would be the string of whatever employee's salary in $XX,XXX.XX format.
+    // 2. Then I'm slicing the first character from that ($) and also replacing all commas with an empty character string.  Then to make sure it turns from a string to a number I decided to use type coersion by multiplying by 1
+    // 3. Then I take that number and divide by 12 and subtract it from the monthlySalaryTotal which is stored as a global variable
+    // 4. Then I replace the text of the specific item that has #total-monthly-diplay ID attached, with Total Monthly: (insdide is using that monthlySalaryTotal number and putting it into a US currency format again).
+    // 5. Phew! And also can't believe it worked finally.
 
     if (monthlySalaryTotal < 20000) {
         $('#total-monthly-display').removeClass('red-background');
