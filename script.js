@@ -18,14 +18,14 @@ let monthlySalaryTotal = 0;
 
 function handleSubmit(event) {
     event.preventDefault(); // telling jQuery to stop the default event of clicking a submit button for a form
-    console.log("inside handleSubmit")
+    // console.log("inside handleSubmit")
 
     const firstNameEmployee = $('#first-name').val() // Getter used (the value of) the item (in this case what's written in the input) that has the ID of first-name
     const lastNameEmployee = $('#last-name').val()
     const idNumber = $('#id-number').val()
     const jobTitle = $('#job-title').val()
     const annualSalary = $('#annual-salary').val()
-    console.log("added annual salary:", annualSalary)
+    // console.log("added annual salary:", annualSalary)
 
     // adding new annualSalary to global variable monthlySalaryTotal
     monthlySalaryTotal += annualSalary / 12;
@@ -48,7 +48,9 @@ function handleSubmit(event) {
     // ^ this adds a table row of table data, using the values of newly declared variables (which themselves get the values we wrote in the inputs using a getter .val())
     // I also found out you can just add $ in front of the ${annualSalary} which might make it easier to use the calc?
     // made sure to add class and id for salary/delete button to use with handlers and calculations
-    // For the life of me cannot understand why we can't add ${annualSalary.toLocaleString("en-US", { style: "currency", currency: "USD" })
+    
+    // I cannot understand why we can't add ${annualSalary.toLocaleString("en-US", { style: "currency", currency: "USD" })
+
     $('#annual-salary-cell').text()
 
     $("#first-name").val("");
@@ -64,10 +66,10 @@ function handleDelete() {
     // define variable as value of same row's annual salary cell
     // how to do this?  tried using $(this).val() but that'd only get the button value.  $(this).parent.(#annual-salary-cell)
 
-    const specificEmployeeSalary = $(this).parent().siblings('#annual-salary-cell').val()
-    console.log(specificEmployeeSalary);
-    // monthlySalaryTotal -= specificEmployeeSalary / 12;
-    // $('#total-monthly-display').text(monthlySalaryTotal)
+    // const specificEmployeeSalary = $(this).parent().siblings('#annual-salary-cell').val()
+    // console.log(specificEmployeeSalary);
+    // // monthlySalaryTotal -= specificEmployeeSalary / 12;
+    // // $('#total-monthly-display').text(monthlySalaryTotal)
 
     if (monthlySalaryTotal < 20000) {
         $('#total-monthly-display').removeClass('red-background');
