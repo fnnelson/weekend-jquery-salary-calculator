@@ -41,14 +41,14 @@ function handleSubmit(event) {
         <td>${lastNameEmployee}</td>
         <td>${idNumber}</td>
         <td>${jobTitle}</td>
-        <td id="annual-salary-cell">$${annualSalary}</td>
+        <td id="annual-salary-cell">$${Number(annualSalary).toLocaleString('en')}</td>
         <td><button id="delete-button">Delete</button></td>
     </tr>
         `)
     // ^ this adds a table row of table data, using the values of newly declared variables (which themselves get the values we wrote in the inputs using a getter .val())
     // I also found out you can just add $ in front of the ${annualSalary} which might make it easier to use the calc?
     // made sure to add class and id for salary/delete button to use with handlers and calculations
-    
+
     // I cannot understand why we can't add ${annualSalary.toLocaleString("en-US", { style: "currency", currency: "USD" })
 
     $('#annual-salary-cell').text()
